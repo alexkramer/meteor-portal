@@ -1,0 +1,20 @@
+/* CSS declarations go here */
+.gsg-text {
+    color: #f0b323;
+}
+
+.table th {
+    background-color: rgba(225,0,152,0.65);
+}
+
+.btn-gsg-periwinkle {
+    color: #fff;
+    background-color: #7474C1;
+    border-color: #7474C1;
+}
+
+.navbar-inverse .nav > li > a {
+    color: #fff;
+}
+
+body { padding-top: 225px; }

@@ -1,0 +1,23 @@
+<template name="patientList">
+    <div class="well">
+        <h3 class="gsg-text">All Patients</h3>
+    </div>
+    <table class="table table-striped table-bordered">
+        <tr>
+            <th>Name</th>
+            <th>DOB</th>
+            <th>Postal Code</th>
+            <th>Phone</th>
+            <th>Email</th>
+        </tr>
+        {{#each patients}}
+            <tr>
+                <td><a href="{{pathFor 'showPatient'}}">{{firstName}} {{lastName}}</a></td>
+                <td>{{dob}}</td>
+                <td>{{postalCode}}</td>
+                <td>{{phone}}</td>
+                <td>{{email}}</td>
+            </tr>
+        {{/each}}
+    </table>
+</template>

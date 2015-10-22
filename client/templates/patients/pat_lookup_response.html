@@ -1,0 +1,26 @@
+<template name="patientLookupResponse">
+    <div class="well control-group">
+        <p class="form-control-static">
+            <label class="control-label">Registration Status</label> <span class="{{statusClass}}">{{registrationStatus}}</span>
+        </p>
+        <p class="form-control-static">
+            <label class="control-label">GSG MRN</label> {{patientGsgMRN}}
+        </p>
+        <div class="form-control-static">
+            <label class="control-label">Emails</label>
+            <ul>
+                {{#each patientEmails}}
+                    <li>{{.}}</li>
+                {{/each}}
+            </ul>
+        </div>
+        <div class="form-control-static">
+            <label class="control-label">Phone Numbers</label>
+            <ul>
+                {{#each patientPhoneNumbers}}
+                    <li>{{.}}</li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</template>

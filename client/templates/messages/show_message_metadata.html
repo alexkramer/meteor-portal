@@ -1,0 +1,16 @@
+<template name="messageMetadata">
+    <div class="well control-group">
+        <p class="form-control-static">
+            <label class="control-label">Message ID</label>
+            <a href="{{pathFor 'showMessage'}}">
+                <span class="{{statusClass}}">{{_id}}</span>
+            </a>
+        </p>
+        <p class="form-control-static">
+            <label class="control-label">Message Type</label> {{messageType}}
+        </p>
+        <p class="form-control-static">
+            <label class="control-label">Complete Message</label> {{messageToString}}
+        </p>
+    </div>
+</template>

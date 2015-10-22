@@ -1,0 +1,36 @@
+<template name="showPatient">
+    <div class="row">
+        <table class="table table-striped table-bordered">
+            <tr>
+                <th>Name</th>
+                <th>DOB</th>
+                <th>Postal Code</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+            <tr>
+                <td>{{firstName}} {{lastName}}</td>
+                <td>{{dob}}</td>
+                <td>{{postalCode}}</td>
+                <td>{{phone}}</td>
+                <td>{{email}}</td>
+                <td>
+                    <input type="button" class="btn btn-gsg-periwinkle lookup" value="Lookup"/>
+                    <input type="button" class="btn btn-gsg-periwinkle register" value="Register"/>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="row">
+        {{>patientLookupResponse lookupResponse}}
+    </div>
+
+    <div class="row">
+        {{#each messages}}
+            {{>messageMetadata}}
+        {{/each}}
+    </div>
+
+</template>
