@@ -33,7 +33,8 @@ publishToErp = function(message) {
 
     var client = createStompConnection();
     var outgoingTopic = '/topic/' + Meteor.settings.jms.outgoingTopic;
-    client.publish(outgoingTopic,JSON.stringify(message));
+    var headers = {"messageType":message.messageType};
+    var results = client.publish(outgoingTopic,JSON.stringify(message),headers);
 
     client.disconnect();
 };
