@@ -1,3 +1,4 @@
 {
-  "stomp-client":"0.8.0"
+  "stomp-client":"0.8.0",
+  "buffer":"3.5.1"
 }

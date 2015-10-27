@@ -16,10 +16,13 @@ Meteor.methods({
         return registerPatient(patientId);
     },
     fetchDocument: function(documentId) {
-        this.unblock();
-        return HTTP.get(Meteor.settings.api.urls.fetchDocument + "/" + documentId,{
+        var urlToGet = Meteor.settings.api.urls.fetchDocument + "/" + documentId;
+        console.log("Attempting to fetch document from: " + urlToGet);
+        var results = HTTP.get(urlToGet,{
             auth: apiAuthString(),
+            headers: {"accept":"application/json"},
             npmRequestOptions: {rejectUnauthorized: false}
         });
+        return JSON.parse(results.data.document).fileAttachment.bytes;
     }
 });

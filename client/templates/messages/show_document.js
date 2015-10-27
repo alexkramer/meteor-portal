@@ -1,9 +1,16 @@
+var docPdf = null;
+var docPdfDep = new Deps.Dependency();
+
+Template.showDocument.events({
+    "click .viewPdf": function(event) {
+        docPdf = '/documentPdf/'+event.target.getAttribute('data-documentId');
+        docPdfDep.changed();
+    }
+});
+
 Template.showDocument.helpers({
     documentPdf: function() {
-        var docBytes = null;
-        Meteor.call('fetchDocument',this.documentId,function(error,results) {
-            docBytes = results.data.document.attachment.bytes;
-        });
-        return docBytes;
+        docPdfDep.depend();
+        return docPdf;
     }
 });
