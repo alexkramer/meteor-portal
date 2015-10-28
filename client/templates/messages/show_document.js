@@ -3,7 +3,7 @@ var docPdfDep = new Deps.Dependency();
 
 Template.showDocument.events({
     "click .viewPdf": function(event) {
-        docPdf = '/documentPdf/'+event.target.getAttribute('data-documentId');
+        docPdf = '/documentPdf/'+event.target.getAttribute('data-documentId')+'/mrn/'+event.target.getAttribute('data-mrnId');
         docPdfDep.changed();
     }
 });

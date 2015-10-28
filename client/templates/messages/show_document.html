@@ -1,7 +1,7 @@
 <template name="showDocument">
     <div class="row">
         {{#each .}}
-            <input type="button" class="btn btn-gsg-periwinkle viewPdf" data-documentId="{{documentId}}" value="View PDF"/>
+            <input type="button" class="btn btn-gsg-periwinkle viewPdf" data-documentId="{{documentId}}" data-mrnId="{{gsgMrnID}}" value="View PDF"/>
         {{/each}}
     </div>
     <div class="row">

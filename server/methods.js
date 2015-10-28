@@ -15,14 +15,14 @@ Meteor.methods({
         this.unblock();
         return registerPatient(patientId);
     },
-    fetchDocument: function(documentId) {
-        var urlToGet = Meteor.settings.api.urls.fetchDocument + "/" + documentId;
-        console.log("Attempting to fetch document from: " + urlToGet);
+    fetchDocument: function(documentId,mrnId) {
+        var urlToGet = Meteor.settings.api.urls.fetchDocument;
         var results = HTTP.get(urlToGet,{
+            params: {"documentId":documentId,"gsgMrnId":mrnId},
             auth: apiAuthString(),
             headers: {"accept":"application/json"},
             npmRequestOptions: {rejectUnauthorized: false}
         });
-        return JSON.parse(results.data.document).fileAttachment.bytes;
+        return results.data.document.fileAttachment.bytes;
     }
 });
